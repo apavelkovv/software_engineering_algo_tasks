@@ -15,9 +15,18 @@ software_engineering_algo_tasks/
       <подраздел>/
         test_solution.py   # тесты к задаче, структура зеркалирует tasks
   pyproject.toml           # настройки форматтеров/линтеров
-  mypy.ini                 # настройки проверки типов
   .pre-commit-config.yaml  # автопроверки перед коммитом
 ```
+
+### Требования
+- Python ≥ 3.9
+- Рекомендуется использовать Poetry
+- Типы: используйте встроенные типы (`list`, `dict`, `set`, `tuple`) вместо `typing.List/Dict/...`
+
+### Минимальный объём заданий
+- data_stuctures: выполнить не менее 3 задач
+- sorts: выполнить не менее 2 задач
+- recursion: выполнить 1 задачу
 
 ### Как добавлять решение
 1. Откройте нужную задачу в `tasks/.../task.md`.
@@ -37,40 +46,17 @@ def test_basic():
     assert callable(solution)
 ```
 
-### Запуск тестов
-Рекомендуемые инструменты: `pytest`.
+### Быстрый старт (Poetry)
 ```
-python -m pip install -U pytest
-pytest -q
-```
+poetry install
+poetry run pre-commit install
 
-### Линтеры и форматирование
-В проекте настроены:
-- `ruff` — быстрый линтер (правила базовые, автоисправление через ruff format)
-- `black` — форматтер кода
-- `isort` — сортировка импортов (профиль black)
-- `mypy` — статическая типизация
+# тесты
+make test            # или: poetry run pytest -q
 
-Установка и запуск локально:
-```
-python -m pip install -U pre-commit ruff black isort mypy
-pre-commit install
-
-# разово запустить проверки по всему проекту
-pre-commit run --all-files
-
-# вручную:
-ruff check . && ruff format . && isort . && black . && mypy tasks tests
+# линтеры/форматирование
+make lint-all        # или: poetry run pre-commit run --all-files
 ```
 
-Рекомендации:
-- Локально запускайте форматирование перед коммитом.
-- Поддерживайте типы в публичных функциях и основных алгоритмах.
-- Старайтесь держать функции короткими и осмысленными.
-
-### Принципы решения
-- Корректность важнее микропримизаций.
-- Сначала напишите корректное решение, затем — оптимизируйте.
-- Покрывайте граничные случаи в тестах.
 
 

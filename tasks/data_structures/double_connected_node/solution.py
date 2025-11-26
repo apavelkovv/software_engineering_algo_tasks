@@ -5,6 +5,18 @@ class DoubleConnectedNode:
         self.prev = prev
 
 def solution(node: DoubleConnectedNode) -> DoubleConnectedNode:
+    """Разворачивает двусвязный список.
+
+    Args:
+        node: голова списка
+
+    Returns:
+        новая голова (последний элемент)
+
+    Time: O(n), Space: O(1)
+    """
+    if not node:
+        return node
     curr = node
     new_head = node
     while curr:

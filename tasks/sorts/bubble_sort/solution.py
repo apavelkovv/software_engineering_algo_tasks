@@ -1,4 +1,9 @@
 def bubble_sort(arr: list[int]) -> list[list[int]]:
+    """Сортировка пузырьком с промежуточными состояниями.
+
+    Returns:
+        Список состояний после каждого прохода с обменами.
+    """
     results = []
     n = len(arr)
     arr = arr[:]

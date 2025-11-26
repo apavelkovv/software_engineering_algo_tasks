@@ -94,3 +94,6 @@ def test_reverse_five_nodes():
     assert node0.prev is node1
     assert node0.next is None
     assert node4.prev is None
+
+def test_reverse_none():
+    assert solution(None) is None

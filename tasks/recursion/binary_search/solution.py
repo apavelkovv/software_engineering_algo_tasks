@@ -1,4 +1,9 @@
 def binary_search(arr: list[int], target: int) -> int:
+    """Бинарный поиск в отсортированном массиве.
+
+    Returns:
+        Индекс элемента или -1 если не найден.
+    """
     left, right = 0, len(arr) - 1
     while left <= right:
         mid = (left + right) // 2

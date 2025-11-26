@@ -1,4 +1,9 @@
 def quick_sort(arr: list[int]) -> list[int]:
+    """Быстрая сортировка.
+
+    Returns:
+        Отсортированный массив.
+    """
     if len(arr) <= 1:
         return arr[:]
     pivot = arr[len(arr) // 2]

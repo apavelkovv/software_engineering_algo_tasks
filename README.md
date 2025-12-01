@@ -39,8 +39,10 @@ software_engineering_algo_tasks/
 3. В тестах импортируйте решение из `tasks/.../solution.py`.
 
 Пример:
+
 ```python
-from tasks.data_stuctures.tasks_list.solution import solution
+from tasks.data_structures.tasks_list.solution import solution
+
 
 def test_basic():
     assert callable(solution)

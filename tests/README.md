@@ -17,8 +17,10 @@ tests/
 ```
 
 Импорт из тестов:
+
 ```python
-from tasks.data_stuctures.tasks_list.solution import solution
+from tasks.data_structures.tasks_list.solution import solution
+
 
 def test_example():
     assert callable(solution)
